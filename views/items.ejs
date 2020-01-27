@@ -1,0 +1,24 @@
+<%- include ("partials/header") %> 
+
+<div id="container">
+	<h1>To-Do List <span id="toggle-form"><i class="fa fa-plus"></i></span></h1>
+	<form action="/add" method="POST">
+    <input type="text" name="newfriend" placeholder="Add New To Do" class = "addNew">
+</form>
+		<ul>
+		<% list.forEach(function(item){ %>
+<li><span>
+	    <form id="delete-form" action="/todo/<%=item._id %>?_method=DELETE" method="POST">
+			<!-- <input type="submit" class="btn btn-xs btn-danger" value="D"> -->
+			<button type="submit" class="btn btn-xs btn-outline-danger"><i class="fa fa-trash"></i></button>
+		<!-- <i class="fa fa-trash"></i> -->
+	    </form>
+	</span> <%= item.name %></li>
+        <% }); %>
+	</ul>
+</div>
+
+<script type="text/javascript" src="/stylesheets/todo.js"></script>
+
+
+<%- include ("partials/footer") %> 
