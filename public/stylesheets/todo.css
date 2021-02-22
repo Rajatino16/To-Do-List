@@ -99,3 +99,12 @@ li:hover span {    /* gives the properties of width and opacity to span when one
 	color: gray;
 	text-decoration: line-through;
 } 
+
+@media (max-width : 900px){
+	#container {
+		width:450px;
+		margin: 50px auto;
+		background: #f7f7f7;
+		box-shadow: 0 0 3px rgba(0,0,0, 0.1);
+	}
+}
